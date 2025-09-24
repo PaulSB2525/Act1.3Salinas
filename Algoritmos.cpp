@@ -4,6 +4,8 @@
 
 #include "Algoritmos.h"
 
+Algoritmos::Algoritmos(){}
+
 void Algoritmos::merge(int inicio,int centro, int final, std::vector<std::pair<int, std::string>> &v) {
     int i = 0, j = 0, k = inicio;
 
@@ -44,7 +46,6 @@ void Algoritmos::merge(int inicio,int centro, int final, std::vector<std::pair<i
 
 void Algoritmos::mergeSort(int inicio, int final, std::vector<std::pair<int,std::string>>&v) {
 
-    int comp = 0;
 
     if (inicio < final) {
         int centro = (inicio+final)/2;

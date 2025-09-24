@@ -11,11 +11,15 @@
 
 class Algoritmos {
 
-public:
-    Algoritmos();
+
+
 
     void merge(int inicio,int centro, int final, std::vector<std::pair<int, std::string>> &v);
     void mergeSort(int inicio, int final, std::vector<std::pair<int, std::string>> &v);
+
+public:
+
+    Algoritmos();
     void ordenaMerge(std::vector<std::pair<int, std::string>> &v);
 
 };
