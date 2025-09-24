@@ -1,8 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <string>
+//
+// Created by Guest on 24/09/2025.
+//
 
-void merge(int inicio,int centro, int final, std::vector<std::pair<int, std::string>> &v) {
+#include "Algoritmos.h"
+
+void Algoritmos::merge(int inicio,int centro, int final, std::vector<std::pair<int, std::string>> &v) {
     int i = 0, j = 0, k = inicio;
 
     int izq = centro - inicio + 1;
@@ -40,7 +42,7 @@ void merge(int inicio,int centro, int final, std::vector<std::pair<int, std::str
     }
 }
 
-void mergeSort(int inicio, int final, std::vector<std::pair<int,std::string>>&v) {
+void Algoritmos::mergeSort(int inicio, int final, std::vector<std::pair<int,std::string>>&v) {
 
     int comp = 0;
 
@@ -52,15 +54,6 @@ void mergeSort(int inicio, int final, std::vector<std::pair<int,std::string>>&v)
     }
 }
 
-void ordenaMerge(std::vector<std::pair<int, std::string>> &v) {
+void Algoritmos::ordenaMerge(std::vector<std::pair<int, std::string>> &v) {
     mergeSort(0, (v.size())-1, v);           //Complejidad O(n log n)
-}
-
-
-int main() {
-
-
-
-    return 0;
-
 }
