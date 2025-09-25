@@ -21,6 +21,8 @@ public:
 
     Algoritmos();
     void ordenaMerge(std::vector<std::pair<int, std::string>> &v);
+    int busquedaBinaria(std::vector<std::pair<int, std::string>> &v, int llave);
+    void imprimeFechas(std::vector<std::pair<int, std::string>> &v, int inicio, int final);
 
 };
 

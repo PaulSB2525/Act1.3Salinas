@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
-#include "Bitacora.h"
 #include "Algoritmos.h"
 
 int main() {
@@ -61,8 +60,32 @@ int main() {
     algoritmos1.ordenaMerge(registrosPonderados);
 
     for (int i=0; i < registrosPonderados.size(); i++) {
-        std::cout << registrosPonderados[i].first << std::endl;
+        std::cout << registrosPonderados[i].second << std::endl;
     }
+    std::cout << std::endl;
+
+    int inicio, final, dia, fechaPonderada;
+    std::string fecha, mesStr;
+
+    std::getline(std::cin, fecha);
+
+    std::stringstream ss(fecha);
+    ss >> mesStr >> dia;
+    auto it = mapaMes.find(mesStr);
+    int mes = it->second;
+    fechaPonderada = mes * 100000000 + dia * 1000000;
+    inicio = algoritmos1.busquedaBinaria(registrosPonderados, fechaPonderada);
+
+    std::getline(std::cin, fecha);
+
+    ss.str(fecha);
+    ss.clear();
+    ss >> mesStr >> dia;
+    it = mapaMes.find(mesStr);
+    mes = it->second;
+    fechaPonderada = mes * 100000000 + dia * 1000000 + 1000000;
+    final = algoritmos1.busquedaBinaria(registrosPonderados, fechaPonderada);
+    algoritmos1.imprimeFechas(registrosPonderados, inicio, final);
 
     return 0;
 }

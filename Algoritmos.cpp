@@ -58,3 +58,29 @@ void Algoritmos::mergeSort(int inicio, int final, std::vector<std::pair<int,std:
 void Algoritmos::ordenaMerge(std::vector<std::pair<int, std::string>> &v) {
     mergeSort(0, (v.size())-1, v);           //Complejidad O(n log n)
 }
+
+void Algoritmos::imprimeFechas(std::vector<std::pair<int, std::string>> &v, int inicio, int final) {
+    for (int i=inicio; i<final; i++) {
+        std::cout << v[i].second << std::endl;
+    }
+    std::cout << std::endl;
+}
+
+int Algoritmos::busquedaBinaria(std::vector<std::pair<int, std::string>> &v, int llave) {
+    int inicio = 0;
+    int fin = v.size() - 1;
+    int medio = -1;
+
+    while (inicio <= fin) {
+        medio = inicio + (fin - inicio) / 2;
+
+        if (v[medio-1].first <= llave && v[medio].first >= llave) {
+            return medio;
+        }else if (v[medio].first < llave) {
+            inicio = medio + 1;
+        } else {
+            fin = medio - 1;
+        }
+    }
+    return medio;
+}
